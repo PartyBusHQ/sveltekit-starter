@@ -16,6 +16,7 @@ This starter kit uses Sveltekit (adapter-auto).
 - [x] Tailwind CSS
 - [x] DaisyUI
 - [x] MongoDB
+- [x] Algolia
 - [x] Contentful
 - [x] Playwright
 
