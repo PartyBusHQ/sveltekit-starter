@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"algoliasearch": "^4.20.0",
 		"mongoose": "^8.0.1"
 	}
 }
