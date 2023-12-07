@@ -23,3 +23,4 @@ This starter kit uses Sveltekit (adapter-auto).
 ### Components
 
 - [x] 3D Button
+- [x] Image - Spinning Border
