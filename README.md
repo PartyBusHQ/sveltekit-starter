@@ -21,6 +21,10 @@ This starter kit uses Sveltekit (adapter-auto).
 - [x] Supabase
 - [x] MongoDB
 
+### ORM
+
+- [x] Prisma
+
 ### Services
 
 - [x] Algolia
