@@ -1,8 +1,6 @@
 import algoliasearch from 'algoliasearch';
+import { ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY } from '$env/static/private';
 
-const algoliaClient = algoliasearch(
-	import.meta.env.VITE_ALGOLIA_APP_ID,
-	import.meta.env.VITE_ALGOLIA_ADMIN_API_KEY
-);
+const algoliaClient = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
 
 export default algoliaClient;

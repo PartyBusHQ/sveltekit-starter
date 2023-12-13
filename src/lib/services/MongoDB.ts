@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+import { MONGODB_URI } from '$env/static/private';
 
 export default class DatabaseService {
 	static async connect() {
 		try {
-			await mongoose.connect(import.meta.env.VITE_MONGODB_URI);
+			await mongoose.connect(MONGODB_URI);
 			console.log('Connected to MongoDB');
 		} catch (e) {
 			console.error(e);

@@ -11,17 +11,28 @@ npm run dev
 
 This starter kit uses Sveltekit (adapter-auto).
 
-### Tools
+### CSS / UI
 
 - [x] Tailwind CSS
 - [x] DaisyUI
+
+### Database
+
 - [x] Supabase
 - [x] MongoDB
+
+### Services
+
 - [x] Algolia
 - [x] Contentful
+
+### Testing
+
 - [x] Playwright
+- [x] Vitest
 
 ### Components
 
+- [ ] Copy to clipboard component
 - [x] 3D Button
 - [x] Image - Spinning Border

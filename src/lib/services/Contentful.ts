@@ -1,9 +1,10 @@
 import contentful from 'contentful';
+import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from '$env/static/private';
 
 const contentfulClient = contentful.createClient({
-	space: import.meta.env.VITE_CONTENTFUL_SPACE_ID as string,
+	space: CONTENTFUL_SPACE_ID as string,
 	environment: 'master',
-	accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN as string
+	accessToken: CONTENTFUL_ACCESS_TOKEN as string
 });
 
 export default contentfulClient;
