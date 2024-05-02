@@ -7,52 +7,59 @@ npm i
 npm run dev
 ```
 
-- Keep 1 component library, remove other
+### ENV VARS
 
-  - Want to keep both? read this first:
-    https://github.com/saadeghi/daisyui/discussions/2140
+```
+MongoDB_URI
+Supabase_Anon_key
+Supabase_URL
+```
 
-- Env Vars:
-  - MongoDB_URI
-  - Supabase_Anon_key
-  - Supabase_URL
+---
 
 ## Basic Info
 
 This starter kit uses Sveltekit (adapter-auto).
 
-### CSS / UI
+- Keep 1 component library, remove other
+
+  - Want to keep both? read this first:
+    - https://github.com/saadeghi/daisyui/discussions/2140
+
+---
+
+### CSS / UI 🎨
 
 - [x] Tailwind CSS
 - [x] Shadcn UI
 - [x] DaisyUI
       **It's recomended that you only keep 1 component library**
 
-### Database
+### Database 📀
 
 - [x] Supabase
 - [x] MongoDB
 
-### ORM
+### ORM 🧩
 
 - [x] Prisma
 
-### Auth
+### Auth 🔒
 
 - [x] Lucia
 
-### Services
+### Services 🔧
 
 - [x] Algolia
 - [x] Contentful
 
-### Testing
+### Testing 👀
 
 - [x] Playwright
 - [x] Vitest
 
-### Components
+### Components 🏗️
 
-- [ ] Copy to clipboard component
 - [x] 3D Button
 - [x] Image - Spinning Border
+- [ ] Copy to clipboard component
