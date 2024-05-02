@@ -33,7 +33,6 @@ This starter kit uses Sveltekit (adapter-auto).
 - [x] Tailwind CSS
 - [x] Shadcn UI
 - [x] DaisyUI
-      **It's recomended that you only keep 1 component library**
 
 ### Database 📀
 
