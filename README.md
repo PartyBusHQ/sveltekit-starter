@@ -13,6 +13,8 @@ npm run dev
 MongoDB_URI
 Supabase_Anon_key
 Supabase_URL
+DATABASE_URL
+DIRECT_URL
 ```
 
 ---
