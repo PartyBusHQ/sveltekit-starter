@@ -36,8 +36,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@lucia-auth/adapter-prisma": "^4.0.1",
+		"@prisma/client": "^5.13.0",
 		"@supabase/supabase-js": "^2.39.0",
 		"algoliasearch": "^4.20.0",
+		"lucia": "^3.2.0",
 		"mongoose": "^8.0.1"
 	}
 }
