@@ -1,3 +1,13 @@
+<script lang="ts">
+  import { toast } from "svelte-sonner";
+
+  export let form: { message: string, success: boolean };
+
+  $: if(form) {
+    toast(form.message)
+  }
+</script>
+
 <section class="h-screen flex items-center justify-center bg-gradient-to-b from-red-300 to-orange-100  dark:from-black dark:to-slate-500">
   <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">

@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
+import { dev } from '$app/environment';
 const prisma = global.prisma || new PrismaClient();
 
-if (process.env.NODE_ENV === 'development') global.prisma = prisma;
+if (dev === true) global.prisma = prisma;
 
 export { prisma };
