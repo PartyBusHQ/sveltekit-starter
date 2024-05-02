@@ -1,61 +1,125 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
-  import { onMount } from 'svelte';
-  import { fly} from 'svelte/transition';
+  import { enhance } from '$app/forms';
+  import { toast } from 'svelte-sonner';
+  import * as Dialog from "$lib/components/ui/dialog";
+  import { Input } from "$lib/components/ui/input";
 
-  let ready: boolean = false;
-  let email: string = '';
-  let password: string = '';
-  let errorMessage: HTMLParagraphElement;
+  let email = '';
 
-  onMount(() => ready = true);
+  export let form: { message: string, success: boolean };
 
-  async function signIn(): Promise<void>{
-  };
+  $: if(form) {
+    toast(form.message)
+  }
 
+  async function handleResetPassword(email: string): Promise<boolean> {
+    const res = await fetch('/reset-password', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await res.json();
+
+    console.log(data.status)
+
+    if (data.status === 200) {
+      toast.success(data.message);
+      return true;
+    } else {
+      toast.error(data.message);
+      console.error(data);
+      return false;
+    }
+  }
 </script>
 
-{#if ready}
-  <div class="relative mt-6">
-    <svg viewBox="0 0 1208 1024" class="fixed -top-16 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]">
-      <ellipse cx="604" cy="512" fill="url(#6d1bd035-0dd1-437e-93fa-59d316231eb0)" rx="604" ry="512" />
-      <defs>
-        <radialGradient id="6d1bd035-0dd1-437e-93fa-59d316231eb0">
-          <stop stop-color="#5800FF" />
-          <stop offset="1" stop-color="#66347F" />
-        </radialGradient>
-      </defs>
-    </svg>
-  </div>
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+<section class="h-screen flex items-center justify-center bg-gradient-to-b from-red-300 to-orange-100  dark:bg-gradient-to-b dark:from-black dark:to-slate-500">
+  <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
       <a href="/">
-        <img in:fly={{y: 100, delay: 400, duration: 1000}} class="mx-auto h-10 w-auto" src="/logo.png" alt="Your Company">
-      </a>  
+        <!-- <img class="mx-auto h-24" src="/logo.png" alt="Your Company"> -->
+      </a>
+      <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-primary">Welcome Back!</h2>
     </div>
-    <h1 in:fly={{y: 100, delay: 500, duration: 1500}} class="mt-4 text-4xl font-bold tracking-tight sm:text-3xl bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text text-center">Sign In</h1>
-    <div in:fly={{y: 100, delay: 600, duration: 2000}} class="mt-4 sm:mx-auto sm:w-full sm:max-w-sm bg-white bg-opacity-25 p-10 rounded-lg">
-        <div>
-          <label for="email" class="block text-sm font-medium leading-6 text-white">Email address</label>
-          <div class="mt-2">
-            <input bind:value={email} id="email" name="email" type="email" autocomplete="email" required class="block w-full px-2 rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center justify-between">
-            <label for="password" class="block text-sm font-medium leading-6 text-white">Password</label>
-            <div class="text-sm">
+    
+  
+    <div class="mt-2 sm:mx-auto sm:w-full sm:max-w-[480px] sm:min-w-[330px]">
+      <div class="bg-white bg-opacity-30 px-6 py-12 sm:rounded-lg sm:px-12 shadow-md shadow-slate-500">
+        <form class="space-y-6" use:enhance method="POST">
+          <div>
+            <label for="email" class="block text-sm font-semibold leading-6 text-primary">Email address</label>
+            <div class="mt-2">
+              <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 px-1.5 py-1.5 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-primary placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent">
             </div>
           </div>
-          <div class="mt-2">
-            <input bind:value={password} id="password" name="password" type="password" autocomplete="current-password" required class="block bg-white/5 w-full px-2 rounded-md border- py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6">
+  
+          <div>
+            <label for="password" class="block text-sm font-semibold leading-6 text-primary">Password</label>
+            <div class="mt-2">
+              <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full bg-transparent rounded-md border-0 px-1.5 py-1.5 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-primary placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ">
+            </div>
+          </div>
+  
+          <div class="flex items-center justify-between">
+
+            <Dialog.Root>
+              <Dialog.Trigger>Forgot Password?</Dialog.Trigger>
+              <Dialog.Content>
+                <Dialog.Header>
+                  <Dialog.Title class="my-2">Enter Your Email</Dialog.Title>
+                  <Dialog.Description>
+                    <Input 
+                      bind:value={email}
+                      type="email" 
+                      placeholder="hi@example.com" 
+                    />
+                    <button on:click|preventDefault={() => handleResetPassword(email)} class="flex w-20 my-4 justify-center rounded-md bg-opacity-30 bg-gray-500 dark:bg-gray-300 dark:text-gray-900 text-primary px-3 p-1.5 text-sm font-semibold leading-6 shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Send</button>
+                  </Dialog.Description>
+                </Dialog.Header>
+              </Dialog.Content>
+            </Dialog.Root>
+            <!-- <div class="text-sm leading-6">
+              <a href="#" class="font-semibold text-primary hover:text-indigo-500">Forgot password?</a>
+            </div> -->
+          </div>
+  
+          <div>
+            <button type="submit" class="flex w-full justify-center rounded-md bg-opacity-30 bg-slate-800 dark:bg-slate-700 dark:text-primary px-3 p-1.5 text-sm font-semibold leading-6 text-primary shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Sign in</button>
+          </div>
+        </form>
+  
+        <div>
+          <div class="relative mt-10">
+            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+              <div class="w-full border-t border-gray-500"></div>
+            </div>
+            <div class="relative flex justify-center text-sm font-medium leading-6">
+              <!-- <span class="bg-primary bg-opacity-30 px-6 text-primary">Or</span> -->
+            </div>
+          </div>
+  
+          <div class="mt-6 grid grid-cols-1 gap-4">
+            <a href="/oauth/google" class="flex w-full items-center justify-center gap-3 rounded-md bg-opacity-30 bg-slate-800 dark:bg-slate-700 dark:text-primary px-3 p-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:ring-transparent">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z" fill="#EA4335" />
+                <path d="M23.49 12.275C23.49 11.49 23.415 10.73 23.3 10H12V14.51H18.47C18.18 15.99 17.34 17.25 16.08 18.1L19.945 21.1C22.2 19.01 23.49 15.92 23.49 12.275Z" fill="#4285F4" />
+                <path d="M5.26498 14.2949C5.02498 13.5699 4.88501 12.7999 4.88501 11.9999C4.88501 11.1999 5.01998 10.4299 5.26498 9.7049L1.275 6.60986C0.46 8.22986 0 10.0599 0 11.9999C0 13.9399 0.46 15.7699 1.28 17.3899L5.26498 14.2949Z" fill="#FBBC05" />
+                <path d="M12.0004 24.0001C15.2404 24.0001 17.9654 22.935 19.9454 21.095L16.0804 18.095C15.0054 18.82 13.6204 19.245 12.0004 19.245C8.8704 19.245 6.21537 17.135 5.2654 14.29L1.27539 17.385C3.25539 21.31 7.3104 24.0001 12.0004 24.0001Z" fill="#34A853" />
+              </svg>
+              <span class="text-sm font-semibold leading-6">Sign in with Google</span>
+            </a>
           </div>
         </div>
-
-        <div class="mt-4">
-          <button on:click={signIn} type="submit" class="flex w-full justify-center rounded-md bg-white bg-opacity-25 px-3 py-1.5 text-md font-semibold leading-6 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Sign in</button>
-        </div>
-       <p bind:this={errorMessage} class="mt-10 text-center text-sm text-red-400 italic"></p>
+      </div>
+  
+      <p class="mt-10 text-center text-sm text-gray-400">
+        Don't have an account?
+        <a href="/register" class="font-semibold leading-6 text-primary">Sign Up</a>
+      </p>
     </div>
   </div>
-{/if}
+  
+  </section>

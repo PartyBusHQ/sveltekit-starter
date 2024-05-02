@@ -15,6 +15,8 @@ Supabase_Anon_key
 Supabase_URL
 DATABASE_URL
 DIRECT_URL
+PUBLIC_URL
+RESEND_KEY
 ```
 
 ---
@@ -51,6 +53,7 @@ This starter kit uses Sveltekit (adapter-auto).
 
 ### Services 🔧
 
+- [x] Resend
 - [x] Algolia
 - [x] Contentful
 
