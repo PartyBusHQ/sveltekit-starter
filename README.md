@@ -14,12 +14,11 @@ npm run dev
 ### ENV VARS
 
 ```
-MongoDB_URI
+PUBLIC_URL
 Supabase_Anon_key
 Supabase_URL
 DATABASE_URL
 DIRECT_URL
-PUBLIC_URL
 RESEND_KEY
 ```
 
@@ -28,11 +27,6 @@ RESEND_KEY
 ## Basic Info
 
 This starter kit uses Sveltekit (adapter-auto).
-
-- Keep 1 component library, remove other
-
-  - Want to keep both? read this first:
-    - https://github.com/saadeghi/daisyui/discussions/2140
 
 ---
 
