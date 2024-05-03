@@ -1,7 +1,11 @@
-# Getting Started
+# Welcome! 👋
+
+## Sveltetastic is designed to get you up and running quickly with Sveltekit
+
+### Instructions
 
 ```
-git clone https://github.com/diamondalltheway/svelte-starter-kit.git
+git clone https://github.com/diamondalltheway/sveltetastic.git
 cd svelte-starter-kit
 npm i
 npm run dev
@@ -36,12 +40,10 @@ This starter kit uses Sveltekit (adapter-auto).
 
 - [x] Tailwind CSS
 - [x] Shadcn UI
-- [x] DaisyUI
 
 ### Database 📀
 
 - [x] Supabase
-- [x] MongoDB
 
 ### ORM 🧩
 
