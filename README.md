@@ -2,6 +2,16 @@
 
 ## Sveltetastic is designed to get you up and running quickly with Sveltekit
 
+<div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" height="50" width="50"/>
+  <img src="https://toplobster.io/supabase.png" height="50" width="50" />
+  <img src="https://toplobster.io/prisma.png" height="50" width="50" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg" height="50" width="50" />
+  <img src="https://toplobster.io/shadcn-ui.png" height="50" width="50" />
+  <img src="https://toplobster.io/vite.png" height="50" width="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" height="50" width="50" />
+</div>
+
 ### Instructions
 
 ```
