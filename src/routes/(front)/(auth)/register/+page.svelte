@@ -8,14 +8,14 @@
   }
 </script>
 
-<section class="h-screen flex items-center justify-center bg-gradient-to-b from-red-300 to-orange-100  dark:from-black dark:to-slate-500">
+<section class="h-screen flex items-center justify-center bg-gradient-to-b from-yellow-100 via-slate-200 to-neutral-300  dark:from-black dark:to-slate-500">
   <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
       <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-primary">Create an Account</h2>
     </div>
   
     <div class="mt-4 sm:mx-auto sm:w-full sm:max-w-[480px] sm:min-w-[330px]">
-      <div class="bg-white bg-opacity-30 px-6 py-12 sm:rounded-lg sm:px-12 shadow-xl shadow-slate-500">
+      <div class="bg-slate-300 bg-opacity-30 px-6 py-12 sm:rounded-lg sm:px-12 shadow-xl shadow-slate-500">
         <form
           class="space-y-6" 
           method="POST" 
@@ -62,7 +62,7 @@
         </div>
       </div>
   
-      <p class="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+      <p class="mt-10 text-center text-sm text-gray-800 dark:text-gray-400">
         Have an account?
         <a href="/login" class="font-semibold leading-6 text-primary hover:text-indigo-500">Login</a>
       </p>

@@ -36,7 +36,7 @@
   }
 </script>
 
-<section class="h-screen flex items-center justify-center bg-gradient-to-b from-red-300 to-orange-100  dark:bg-gradient-to-b dark:from-black dark:to-slate-500">
+<section class="h-screen flex items-center justify-center bg-gradient-to-b from-yellow-100 via-slate-200 to-neutral-300  dark:bg-gradient-to-b dark:from-black dark:to-slate-500">
   <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
       <a href="/">
