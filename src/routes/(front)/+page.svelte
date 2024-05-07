@@ -2,7 +2,7 @@
   import ImageSpinningBorder from '$lib/components/ImageSpinningBorder.svelte';
 </script>
 
-<div class="relative isolate overflow-hidden bg-gray-900">
+<div class="relative h-screen isolate overflow-hidden bg-gray-900">
   <svg class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
     <defs>
       <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
@@ -42,7 +42,52 @@
     </div>
     <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
       <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-        <img src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10">
+        <div class="p-24">
+          <ul class="flex flex-col gap-3 ml-16 mt-12">
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Svlete/Sveltekit</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Supabase</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Prisma</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Tailwind CSS</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Shadcn ui</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Vitest</span>
+            </li>
+            <li class="flex gap-2 text-indigo-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+              </svg>
+             <span class="text-lg font-bold">Playwright</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
