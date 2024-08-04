@@ -1,6 +1,6 @@
 # Welcome! 👋
 
-## Sveltetastic is designed to get you up and running quickly with Sveltekit
+## Sveltekit-starter is designed to get you up and running quickly with Sveltekit
 
 <div>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" height="50" width="50"/>
@@ -21,22 +21,11 @@ npm i
 npm run dev
 ```
 
-### ENV VARS
-
-```
-PUBLIC_URL
-Supabase_Anon_key
-Supabase_URL
-DATABASE_URL
-DIRECT_URL
-RESEND_KEY
-```
-
----
-
 ## Basic Info
 
-This starter kit uses Sveltekit (adapter-auto).
+- This starter kit uses Sveltekit (adapter-auto).
+- ENV vars found in `.template.env`
+- Using Prettier/Tailwind pluggin (utility class organization)
 
 ---
 
@@ -59,7 +48,7 @@ This starter kit uses Sveltekit (adapter-auto).
 
 ### Services 🔧
 
-- [x] Resend
+- [x] Resend 
 - [x] Algolia
 - [x] Contentful
 
@@ -67,9 +56,3 @@ This starter kit uses Sveltekit (adapter-auto).
 
 - [x] Playwright
 - [x] Vitest
-
-### Components 🏗️
-
-- [x] 3D Button
-- [x] Image - Spinning Border
-- [ ] Copy to clipboard component
